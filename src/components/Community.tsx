@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { 
   Users, 
   MessageCircle, 
@@ -183,14 +184,15 @@ const Community = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="text-lg px-8"
-                onClick={() => window.location.href = '/join.html'}
-              >
-                Join e-DAM Community
-              </Button>
+              <Link to="/join">
+                <Button 
+                  variant="hero" 
+                  size="lg" 
+                  className="text-lg px-8"
+                >
+                  Join e-DAM Community
+                </Button>
+              </Link>
               <Button variant="tech" size="lg" className="text-lg px-8">
                 Learn More
               </Button>

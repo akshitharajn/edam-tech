@@ -253,6 +253,14 @@ All colors MUST be HSL.
     overflow: hidden;
   }
   
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
   .team-card-hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }

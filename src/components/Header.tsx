@@ -1,18 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Courses", href: "#courses" },
-    { name: "Technologies", href: "#technologies" },
-    { name: "Our Team", href: "#team" },
-    { name: "Programs", href: "#programs" },
-    { name: "Community", href: "#community" },
+    { name: "Home", href: "#home", isExternal: false },
+    { name: "About", href: "#about", isExternal: false },
+    { name: "Courses", href: "/courses", isExternal: true },
+    { name: "Technologies", href: "#technologies", isExternal: false },
+    { name: "Our Team", href: "#team", isExternal: false },
+    { name: "Programs", href: "#programs", isExternal: false },
+    { name: "Community", href: "#community", isExternal: false },
   ];
 
   return (
@@ -28,15 +29,25 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </a>
-            ))}
+            {navigation.map((item) => 
+              item.isExternal ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </a>
+              )
+            )}
           </nav>
 
           {/* Desktop CTA */}
@@ -44,9 +55,11 @@ const Header = () => {
             <Button variant="ghost" size="sm">
               Login
             </Button>
-            <Button variant="hero" size="sm" className="rounded-full">
-              Sign Up
-            </Button>
+            <Link to="/join">
+              <Button variant="hero" size="sm" className="rounded-full">
+                Join Community
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -66,23 +79,36 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card rounded-lg mt-2 border border-border">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
+              {navigation.map((item) => 
+                item.isExternal ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                )
+              )}
               <div className="pt-2 flex flex-col space-y-2">
                 <Button variant="ghost" size="sm">
                   Login
                 </Button>
-                <Button variant="hero" size="sm" className="rounded-full">
-                  Sign Up
-                </Button>
+                <Link to="/join">
+                  <Button variant="hero" size="sm" className="rounded-full w-full">
+                    Join Community
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
