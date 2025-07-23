@@ -51,9 +51,6 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
-              Login
-            </Button>
             <Link to="/join">
               <Button variant="hero" size="sm" className="rounded-full">
                 Join Community
@@ -100,9 +97,6 @@ const Header = () => {
                 )
               )}
               <div className="pt-2 flex flex-col space-y-2">
-                <Button variant="ghost" size="sm">
-                  Login
-                </Button>
                 <Link to="/join">
                   <Button variant="hero" size="sm" className="rounded-full w-full">
                     Join Community
