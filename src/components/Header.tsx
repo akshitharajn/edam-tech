@@ -9,7 +9,6 @@ const Header = () => {
   const navigation = [
     { name: "Home", href: "#home", isExternal: false },
     { name: "About", href: "#about", isExternal: false },
-    { name: "Courses", href: "/courses", isExternal: true },
     { name: "Technologies", href: "#technologies", isExternal: false },
     { name: "Our Team", href: "#team", isExternal: false },
     { name: "Programs", href: "#programs", isExternal: false },

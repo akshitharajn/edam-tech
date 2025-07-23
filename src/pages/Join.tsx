@@ -141,7 +141,7 @@ const Join = () => {
   const benefits = [
     "Access to exclusive tech workshops and events",
     "Networking opportunities with industry professionals",
-    "Free access to learning resources and courses",
+    "Free access to learning resources and tutorials",
     "Mentorship from experienced developers",
     "Job and internship opportunities",
     "Community support and collaboration"

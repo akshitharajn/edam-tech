@@ -44,7 +44,7 @@ const Hero = () => {
 
             {/* Three Pillars */}
             <div className="flex justify-center gap-8 md:gap-12">
-              <a href="/courses.html" className="flex flex-col items-center space-y-2 text-white opacity-90 hover:opacity-100 transition-opacity cursor-pointer">
+              <a href="#technologies" className="flex flex-col items-center space-y-2 text-white opacity-90 hover:opacity-100 transition-opacity cursor-pointer">
                 <BookOpen className="h-8 w-8" />
                 <span className="font-semibold">Learn</span>
               </a>

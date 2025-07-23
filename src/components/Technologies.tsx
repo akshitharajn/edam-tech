@@ -126,7 +126,7 @@ const Technologies = () => {
               Ready to Start Your Tech Journey?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Join our community and get access to expert-led courses, hands-on projects, 
+              Join our community and get access to expert-led workshops, hands-on projects, 
               and a network of passionate developers and entrepreneurs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
