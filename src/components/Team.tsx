@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { 
   Linkedin, 
   Github, 
-  Twitter, 
+  Instagram, 
   Mail,
   MapPin,
   Users,
@@ -61,9 +61,9 @@ const Team = () => {
       location: "Hyderabad, India",
       specialties: ["Leadership", "Strategy", "Community Building"],
       social: {
-        linkedin: "https://linkedin.com/in/rajeshkumar",
-        github: "https://github.com/rajeshkumar",
-        twitter: "https://twitter.com/rajeshkumar",
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        github: "https://github.com/e-DAMCommunity",
+        instagram: "https://www.instagram.com/edam.community/",
         email: "rajesh@edam.tech"
       },
       featured: true
@@ -77,8 +77,8 @@ const Team = () => {
       location: "Hyderabad, India",
       specialties: ["AI/ML", "Full-Stack Development", "DevOps"],
       social: {
-        linkedin: "https://linkedin.com/in/priyasharma",
-        github: "https://github.com/priyasharma",
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        github: "https://github.com/e-DAMCommunity",
         email: "priya@edam.tech"
       },
       featured: true
@@ -92,8 +92,8 @@ const Team = () => {
       location: "Hyderabad, India",
       specialties: ["Education Design", "Program Management", "Mentoring"],
       social: {
-        linkedin: "https://linkedin.com/in/arjunreddy",
-        github: "https://github.com/arjunreddy",
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        github: "https://github.com/e-DAMCommunity",
         email: "arjun@edam.tech"
       },
       featured: false
@@ -107,8 +107,8 @@ const Team = () => {
       location: "Hyderabad, India",
       specialties: ["UI/UX Design", "Design Systems", "User Research"],
       social: {
-        linkedin: "https://linkedin.com/in/snehapatel",
-        github: "https://github.com/snehapatel",
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        github: "https://github.com/e-DAMCommunity",
         email: "sneha@edam.tech"
       },
       featured: false
@@ -122,8 +122,8 @@ const Team = () => {
       location: "Hyderabad, India",
       specialties: ["Community Engagement", "Event Management", "Social Media"],
       social: {
-        linkedin: "https://linkedin.com/in/vikramsingh",
-        twitter: "https://twitter.com/vikramsingh",
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        instagram: "https://www.instagram.com/edam.community/",
         email: "vikram@edam.tech"
       },
       featured: false
@@ -137,8 +137,8 @@ const Team = () => {
       location: "Hyderabad, India",
       specialties: ["Data Science", "Analytics", "Machine Learning"],
       social: {
-        linkedin: "https://linkedin.com/in/anitajoshi",
-        github: "https://github.com/anitajoshi",
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        github: "https://github.com/e-DAMCommunity",
         email: "anita@edam.tech"
       },
       featured: false
@@ -295,12 +295,14 @@ const Team = () => {
                           <Github className="h-4 w-4 text-primary" />
                         </a>
                       )}
-                      {member.social.twitter && (
+                      {member.social.instagram && (
                         <a 
-                          href={member.social.twitter}
+                          href={member.social.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors"
                         >
-                          <Twitter className="h-4 w-4 text-primary" />
+                          <Instagram className="h-4 w-4 text-primary" />
                         </a>
                       )}
                       {member.social.email && (
@@ -378,12 +380,14 @@ const Team = () => {
                         <Github className="h-3 w-3 text-primary" />
                       </a>
                     )}
-                    {member.social.twitter && (
+                    {member.social.instagram && (
                       <a 
-                        href={member.social.twitter}
+                        href={member.social.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-7 h-7 bg-primary/20 rounded-md flex items-center justify-center hover:bg-primary/30 transition-colors"
                       >
-                        <Twitter className="h-3 w-3 text-primary" />
+                        <Instagram className="h-3 w-3 text-primary" />
                       </a>
                     )}
                     {member.social.email && (

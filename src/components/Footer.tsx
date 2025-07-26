@@ -5,7 +5,7 @@ import {
   Phone, 
   Linkedin, 
   Github, 
-  Twitter,
+  Instagram,
   ExternalLink,
   Heart
 } from "lucide-react";
@@ -84,7 +84,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex space-x-4">
               <a 
-                href="https://www.linkedin.com/company/edamcommunity" 
+                href="https://in.linkedin.com/company/edamcommunity" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-card border border-primary/30 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
@@ -92,16 +92,20 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5 text-primary" />
               </a>
               <a 
-                href="#" 
+                href="https://github.com/e-DAMCommunity"
+                target="_blank"
+                rel="noopener noreferrer" 
                 className="w-10 h-10 bg-card border border-primary/30 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
               >
                 <Github className="h-5 w-5 text-primary" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/edam.community/"
+                target="_blank"
+                rel="noopener noreferrer" 
                 className="w-10 h-10 bg-card border border-primary/30 rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
               >
-                <Twitter className="h-5 w-5 text-primary" />
+                <Instagram className="h-5 w-5 text-primary" />
               </a>
             </div>
           </div>
@@ -155,17 +159,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-
-            {/* Newsletter Signup */}
-            <div className="space-y-3">
-              <h4 className="font-semibold text-foreground text-sm">Stay Updated</h4>
-              <p className="text-xs text-muted-foreground">
-                Get the latest updates on events and programs
-              </p>
-              <Button variant="hero" size="sm" className="w-full">
-                Subscribe to Newsletter
-              </Button>
-            </div>
           </div>
         </div>
 

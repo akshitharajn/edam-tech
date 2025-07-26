@@ -328,9 +328,6 @@ const Technologies = () => {
                     Join e-DAM Community
                   </Button>
                 </a>
-                <Button variant="tech" size="lg">
-                  View Course Catalog
-                </Button>
               </div>
             </Card>
           </div>

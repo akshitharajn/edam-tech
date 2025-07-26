@@ -8,7 +8,7 @@ import {
   Trophy, 
   Github, 
   Linkedin, 
-  Twitter,
+  Instagram,
   ExternalLink
 } from "lucide-react";
 
@@ -24,23 +24,23 @@ const Community = () => {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://www.linkedin.com/company/edamcommunity",
+      url: "https://in.linkedin.com/company/edamcommunity",
       description: "Connect with professionals and stay updated with our latest news",
       color: "from-blue-600 to-blue-700"
     },
     {
       name: "GitHub",
       icon: Github,
-      url: "#",
+      url: "https://github.com/e-DAMCommunity",
       description: "Explore our open-source projects and contribute to the community",
       color: "from-gray-700 to-gray-900"
     },
     {
-      name: "Twitter",
-      icon: Twitter,
-      url: "#",
+      name: "Instagram",
+      icon: Instagram,
+      url: "https://www.instagram.com/edam.community/",
       description: "Follow us for quick updates and tech insights",
-      color: "from-blue-400 to-blue-600"
+      color: "from-pink-500 to-purple-600"
     }
   ];
 
@@ -104,7 +104,11 @@ const Community = () => {
           
           <div className="grid md:grid-cols-3 gap-6">
             {socialLinks.map((social, index) => (
-              <Card key={index} className="p-6 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg group cursor-pointer">
+              <Card 
+                key={index} 
+                className="p-6 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg group cursor-pointer"
+                onClick={() => window.open(social.url, '_blank')}
+              >
                 <div className="flex items-start space-x-4">
                   <div className={`w-12 h-12 bg-gradient-to-r ${social.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     <social.icon className="h-6 w-6 text-white" />

@@ -79,6 +79,11 @@ const Hero = () => {
                   Explore Technologies
                 </Button>
               </Link>
+              <Link to="/hundred-days">
+                <Button variant="tech" size="lg">
+                  100 Days of Coding
+                </Button>
+              </Link>
             </div>
 
             {/* Stats */}

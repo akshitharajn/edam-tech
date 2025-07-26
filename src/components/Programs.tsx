@@ -2,7 +2,6 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, Users, Award, Target, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Programs = () => {
   const programs = [
@@ -208,9 +207,16 @@ const Programs = () => {
 
                 {/* CTA */}
                 <div className="flex gap-3">
-                  <Button variant="hero" size="sm" className="flex-1">
-                    Join Program
-                  </Button>
+                  <a 
+                    href="https://forms.gle/Chzxqx968etWogXx6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <Button variant="hero" size="sm" className="flex-1 w-full">
+                      Join Program
+                    </Button>
+                  </a>
                   <Button variant="tech" size="sm">
                     Learn More
                   </Button>
@@ -231,11 +237,15 @@ const Programs = () => {
               Suggest a program or get notified when new ones launch.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/suggest">
+              <a 
+                href="https://forms.gle/Chzxqx968etWogXx6"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button variant="hero" size="lg">
                   Suggest a Program
                 </Button>
-              </Link>
+              </a>
               <Button variant="tech" size="lg">
                 Get Program Updates
               </Button>
