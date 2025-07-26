@@ -316,13 +316,18 @@ const Technologies = () => {
                 and a network of passionate developers and entrepreneurs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  variant="hero" 
-                  size="lg"
-                  onClick={() => window.location.href = '/join.html'}
+                <a 
+                  href="https://forms.gle/njRM2k72CepuzZtC8"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Join e-DAM Community
-                </Button>
+                  <Button 
+                    variant="hero" 
+                    size="lg"
+                  >
+                    Join e-DAM Community
+                  </Button>
+                </a>
                 <Button variant="tech" size="lg">
                   View Course Catalog
                 </Button>

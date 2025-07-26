@@ -184,7 +184,11 @@ const Community = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/join">
+              <a 
+                href="https://forms.gle/njRM2k72CepuzZtC8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <Button 
                   variant="hero" 
                   size="lg" 
@@ -192,7 +196,7 @@ const Community = () => {
                 >
                   Join e-DAM Community
                 </Button>
-              </Link>
+              </a>
               <Button variant="tech" size="lg" className="text-lg px-8">
                 Learn More
               </Button>

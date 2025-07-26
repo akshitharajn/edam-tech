@@ -60,7 +60,11 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/join">
+              <a 
+                href="https://forms.gle/njRM2k72CepuzZtC8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <Button 
                   variant="hero" 
                   size="lg" 
@@ -69,7 +73,7 @@ const Hero = () => {
                   Join Our Community
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </Link>
+              </a>
               <Link to="/technologies">
                 <Button variant="tech" size="lg">
                   Explore Technologies

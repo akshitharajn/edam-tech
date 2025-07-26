@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, Users, Award, Target, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Programs = () => {
   const programs = [
@@ -230,9 +231,11 @@ const Programs = () => {
               Suggest a program or get notified when new ones launch.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg">
-                Suggest a Program
-              </Button>
+              <Link to="/suggest">
+                <Button variant="hero" size="lg">
+                  Suggest a Program
+                </Button>
+              </Link>
               <Button variant="tech" size="lg">
                 Get Program Updates
               </Button>

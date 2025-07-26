@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Technologies from "./pages/Technologies";
 import Volunteer from "./pages/Volunteer";
 import Join from "./pages/Join";
+import Suggest from "./pages/Suggest";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/technologies" element={<Technologies />} />
           <Route path="/volunteer" element={<Volunteer />} />
           <Route path="/join" element={<Join />} />
+          <Route path="/suggest" element={<Suggest />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

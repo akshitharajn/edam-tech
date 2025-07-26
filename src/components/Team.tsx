@@ -419,11 +419,15 @@ const Team = () => {
               >
                 View Open Positions
               </Button>
-              <Link to="/volunteer">
+              <a 
+                href="https://forms.gle/6DEqprPtvo7wQgFX9"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button variant="tech" size="lg">
                   Volunteer With Us
                 </Button>
-              </Link>
+              </a>
             </div>
           </Card>
         </div>
@@ -525,9 +529,16 @@ const Team = () => {
                         )}
                       </div>
                       
-                      <Button variant="hero" size="sm" className="w-full">
-                        Apply Now
-                      </Button>
+                      <a 
+                        href="https://forms.gle/6DEqprPtvo7wQgFX9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full"
+                      >
+                        <Button variant="hero" size="sm" className="w-full">
+                          Apply Now
+                        </Button>
+                      </a>
                     </Card>
                   ))}
                 </div>
@@ -595,9 +606,16 @@ const Team = () => {
                         )}
                       </div>
                       
-                      <Button variant="tech" size="sm" className="w-full">
-                        Apply Now
-                      </Button>
+                      <a 
+                        href="https://forms.gle/6DEqprPtvo7wQgFX9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full"
+                      >
+                        <Button variant="tech" size="sm" className="w-full">
+                          Apply Now
+                        </Button>
+                      </a>
                     </Card>
                   ))}
                 </div>

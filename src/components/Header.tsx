@@ -51,11 +51,15 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/join">
+            <a 
+              href="https://forms.gle/njRM2k72CepuzZtC8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               <Button variant="hero" size="sm" className="rounded-full">
                 Join Community
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -97,11 +101,15 @@ const Header = () => {
                 )
               )}
               <div className="pt-2 flex flex-col space-y-2">
-                <Link to="/join">
+                <a 
+                  href="https://forms.gle/njRM2k72CepuzZtC8" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
                   <Button variant="hero" size="sm" className="rounded-full w-full">
                     Join Community
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
