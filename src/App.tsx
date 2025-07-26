@@ -9,6 +9,7 @@ import Volunteer from "./pages/Volunteer";
 import Join from "./pages/Join";
 import Suggest from "./pages/Suggest";
 import HundredDays from "./pages/HundredDays";
+import OurTeam from "./pages/OurTeam";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/join" element={<Join />} />
           <Route path="/suggest" element={<Suggest />} />
           <Route path="/hundred-days" element={<HundredDays />} />
+          <Route path="/our-team" element={<OurTeam />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -310,27 +310,6 @@ const Join = () => {
                   ))}
                 </div>
               </Card>
-
-              {/* Community Stats */}
-              <Card className="p-6 bg-black/40 border-primary/20 mt-6">
-                <h4 className="text-lg font-semibold text-foreground mb-4">
-                  Join 1000+ Members
-                </h4>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground text-sm">Active Developers</span>
-                    <span className="text-primary font-semibold">500+</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground text-sm">Monthly Events</span>
-                    <span className="text-primary font-semibold">10+</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground text-sm">Partner Companies</span>
-                    <span className="text-primary font-semibold">50+</span>
-                  </div>
-                </div>
-              </Card>
             </div>
           </div>
         </div>

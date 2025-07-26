@@ -9,16 +9,17 @@ import {
   Github, 
   Linkedin, 
   Instagram,
-  ExternalLink
+  ExternalLink,
+  Award,
+  Target, 
 } from "lucide-react";
 
 const Community = () => {
-  const stats = [
-    { label: "Active Members", value: "1,093", icon: Users },
-    { label: "Events Hosted", value: "150+", icon: Calendar },
-    { label: "Projects Completed", value: "300+", icon: Trophy },
-    { label: "Tech Discussions", value: "5,000+", icon: MessageCircle }
-  ];
+   const stats = [
+      { icon: Users, value: "20000+", label: "Active Members" },
+      { icon: Award, value: "20+", label: "Events Hosted" },
+      { icon: Target, value: "10+", label: "Tech Discussions" }
+    ];
 
   const socialLinks = [
     {

@@ -10,7 +10,7 @@ const Header = () => {
     { name: "Home", href: "#home", isExternal: false },
     { name: "About", href: "#about", isExternal: false },
     { name: "Technologies", href: "#technologies", isExternal: false },
-    { name: "Our Team", href: "#team", isExternal: false },
+    { name: "Our Team", href: "/our-team", isExternal: true },
     { name: "Programs", href: "#programs", isExternal: false },
     { name: "Community", href: "#community", isExternal: false },
   ];

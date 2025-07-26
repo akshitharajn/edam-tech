@@ -54,9 +54,9 @@ const Team = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Rajesh Kumar",
-      role: "Founder & CEO",
-      bio: "Visionary leader with 10+ years in tech entrepreneurship and community building.",
+      name: "Abhishek Nagaraja",
+      role: "Founder",
+      bio: "Visionary leader in tech entrepreneurship and community building.",
       image: "/placeholder.svg",
       location: "Hyderabad, India",
       specialties: ["Leadership", "Strategy", "Community Building"],
@@ -70,8 +70,8 @@ const Team = () => {
     },
     {
       id: 2,
-      name: "Priya Sharma",
-      role: "CTO & Tech Lead",
+      name: "Vivekananda Gavini",
+      role: "C0-Founder",
       bio: "Full-stack developer and AI enthusiast leading our technical initiatives.",
       image: "/placeholder.svg",
       location: "Hyderabad, India",
@@ -85,8 +85,8 @@ const Team = () => {
     },
     {
       id: 3,
-      name: "Arjun Reddy",
-      role: "Head of Programs",
+      name: "Rohan Vemula",
+      role: "Community Lead",
       bio: "Education specialist designing impactful learning experiences for our community.",
       image: "/placeholder.svg",
       location: "Hyderabad, India",
@@ -96,43 +96,28 @@ const Team = () => {
         github: "https://github.com/e-DAMCommunity",
         email: "arjun@edam.tech"
       },
-      featured: false
+      featured: true
     },
     {
       id: 4,
-      name: "Sneha Patel",
-      role: "UI/UX Designer",
-      bio: "Creative designer crafting beautiful and intuitive user experiences.",
+      name: "Akshitha Nagasani",
+      role: "Technical Lead",
+      bio: "Empowering developers and shaping technology strategies for scalable growth.",
       image: "/placeholder.svg",
       location: "Hyderabad, India",
-      specialties: ["UI/UX Design", "Design Systems", "User Research"],
+      specialties: ["Web Development", "UI/UX Design", "User Research"],
       social: {
         linkedin: "https://in.linkedin.com/company/edamcommunity",
         github: "https://github.com/e-DAMCommunity",
         email: "sneha@edam.tech"
       },
-      featured: false
+      featured: true
     },
     {
       id: 5,
-      name: "Vikram Singh",
-      role: "Community Manager",
-      bio: "Passionate about building connections and fostering growth within our tech community.",
-      image: "/placeholder.svg",
-      location: "Hyderabad, India",
-      specialties: ["Community Engagement", "Event Management", "Social Media"],
-      social: {
-        linkedin: "https://in.linkedin.com/company/edamcommunity",
-        instagram: "https://www.instagram.com/edam.community/",
-        email: "vikram@edam.tech"
-      },
-      featured: false
-    },
-    {
-      id: 6,
-      name: "Anita Joshi",
-      role: "Data Scientist",
-      bio: "Data expert helping us make informed decisions through analytics and insights.",
+      name: "Yasavi Madapati",
+      role: "Community Mentor and EX_Lead",
+      bio: "Creative Community Mentor turning ideas into engaging digital stories.",
       image: "/placeholder.svg",
       location: "Hyderabad, India",
       specialties: ["Data Science", "Analytics", "Machine Learning"],
@@ -141,8 +126,53 @@ const Team = () => {
         github: "https://github.com/e-DAMCommunity",
         email: "anita@edam.tech"
       },
-      featured: false
-    }
+      featured: true
+    },
+    {
+      id: 6,
+      name: "Snehitha Sunkam",
+      role: "Design Lead",
+      bio: "Focused on building design systems and leading teams to shape visually compelling products.",
+      image: "/placeholder.svg",
+      location: "Hyderabad, India",
+      specialties: ["Community Engagement", "Event Management", "Social Media"],
+      social: {
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        instagram: "https://www.instagram.com/edam.community/",
+        email: "vikram@edam.tech"
+      },
+      featured: true
+    },
+    {
+      id: 7,
+      name: "Nandana",
+      role: "Social Media Manager",
+      bio: "Creative Social Media Manager turning ideas into engaging digital stories.",
+      image: "/placeholder.svg",
+      location: "Hyderabad, India",
+      specialties: ["Data Science", "Analytics", "Machine Learning"],
+      social: {
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        github: "https://github.com/e-DAMCommunity",
+        email: "anita@edam.tech"
+      },
+      featured: true
+    },
+    {
+      id: 8,
+      name: "Ghousiya Begum",
+      role: "Community Manager",
+      bio: "Creative Community Manager turning ideas into engaging digital stories.",
+      image: "/placeholder.svg",
+      location: "Hyderabad, India",
+      specialties: ["Data Science", "Analytics", "Machine Learning"],
+      social: {
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        github: "https://github.com/e-DAMCommunity",
+        email: "anita@edam.tech"
+      },
+      featured: true
+    },
   ];
 
   const stats = [
@@ -314,90 +344,6 @@ const Team = () => {
                         </a>
                       )}
                     </div>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* All Team Members Grid */}
-        <div>
-          <h3 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-8">
-            Our Amazing Team
-          </h3>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {teamMembers.filter(member => !member.featured).map((member) => (
-              <Card 
-                key={member.id}
-                className="p-6 bg-black/40 border-primary/20 hover:border-primary/60 hover:bg-black/60 transition-all duration-300 group cursor-pointer backdrop-blur-sm team-card-hover"
-              >
-                <div className="text-center">
-                  <div className="relative mb-4">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-20 h-20 rounded-full object-cover mx-auto border-2 border-primary/30 group-hover:border-primary transition-colors duration-300"
-                    />
-                    <div className="absolute inset-0 w-20 h-20 rounded-full bg-gradient-to-t from-primary/20 to-transparent mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                  
-                  <h4 className="text-lg font-bold text-foreground mb-1">{member.name}</h4>
-                  <p className="text-primary font-medium text-sm mb-3">{member.role}</p>
-                  <p className="text-muted-foreground text-xs mb-4 line-clamp-2">{member.bio}</p>
-                  
-                  <div className="flex flex-wrap gap-1 justify-center mb-4">
-                    {member.specialties.slice(0, 2).map((specialty, index) => (
-                      <span 
-                        key={index}
-                        className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
-                      >
-                        {specialty}
-                      </span>
-                    ))}
-                    {member.specialties.length > 2 && (
-                      <span className="text-xs bg-muted/20 text-muted-foreground px-2 py-1 rounded-full">
-                        +{member.specialties.length - 2}
-                      </span>
-                    )}
-                  </div>
-                  
-                  <div className="flex gap-2 justify-center">
-                    {member.social.linkedin && (
-                      <a 
-                        href={member.social.linkedin}
-                        className="w-7 h-7 bg-primary/20 rounded-md flex items-center justify-center hover:bg-primary/30 transition-colors"
-                      >
-                        <Linkedin className="h-3 w-3 text-primary" />
-                      </a>
-                    )}
-                    {member.social.github && (
-                      <a 
-                        href={member.social.github}
-                        className="w-7 h-7 bg-primary/20 rounded-md flex items-center justify-center hover:bg-primary/30 transition-colors"
-                      >
-                        <Github className="h-3 w-3 text-primary" />
-                      </a>
-                    )}
-                    {member.social.instagram && (
-                      <a 
-                        href={member.social.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-7 h-7 bg-primary/20 rounded-md flex items-center justify-center hover:bg-primary/30 transition-colors"
-                      >
-                        <Instagram className="h-3 w-3 text-primary" />
-                      </a>
-                    )}
-                    {member.social.email && (
-                      <a 
-                        href={`mailto:${member.social.email}`}
-                        className="w-7 h-7 bg-primary/20 rounded-md flex items-center justify-center hover:bg-primary/30 transition-colors"
-                      >
-                        <Mail className="h-3 w-3 text-primary" />
-                      </a>
-                    )}
                   </div>
                 </div>
               </Card>

@@ -1,11 +1,17 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Target, Lightbulb, Rocket, Heart } from "lucide-react";
+import { Target, Lightbulb, Rocket, Heart, Users, Calendar, Trophy, MessageCircle, ArrowRight, Award } from "lucide-react";
 import learnIcon from "@/assets/learn-icon.jpg";
 import networkIcon from "@/assets/network-icon.jpg";
 import growIcon from "@/assets/grow-icon.jpg";
+import { Link } from "react-router-dom";
 
 const About = () => {
+   const stats = [
+    { icon: Users, value: "20000+", label: "Active Members" },
+    { icon: Award, value: "20+", label: "Events Hosted" },
+    { icon: Target, value: "10+", label: "Tech Discussions" }
+  ];
   return (
     <section id="about" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
@@ -135,6 +141,45 @@ const About = () => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Join Our Community Section */}
+      <div className="container mx-auto px-4 pt-20">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+            Join Our <span className="text-primary">Community</span>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Be part of Hyderabad's most vibrant tech community. Connect, learn, and grow with like-minded individuals.
+          </p>
+        </div>
+
+        {/* Community Stats */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {stats.map((stat, index) => (
+            <Card key={index} className="p-6 text-center bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg group">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <stat.icon className="h-8 w-8 text-primary-foreground" />
+              </div>
+              <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
+              <div className="text-muted-foreground">{stat.label}</div>
+            </Card>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center pb-20">
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLScfgbjBRoC6pNPZA47aCyoo4CussmA6kmZcIUkvcS92I8uMPw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="hero" size="lg" className="text-lg px-8">
+              Join Our Community
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </a>
         </div>
       </div>
     </section>
