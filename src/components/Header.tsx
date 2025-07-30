@@ -11,7 +11,7 @@ const Header = () => {
     { name: "About", href: "#about", isExternal: false },
     { name: "Technologies", href: "#technologies", isExternal: false },
     { name: "Our Team", href: "/our-team", isExternal: true },
-    { name: "EDAM Spotlights", href: "/spotlights", isExternal: true },
+    { name: "e-DAM Spotlights", href: "/spotlights", isExternal: true },
     { name: "Programs", href: "#programs", isExternal: false },
     { name: "Community", href: "#community", isExternal: false },
   ];
