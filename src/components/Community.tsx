@@ -18,7 +18,8 @@ const Community = () => {
    const stats = [
       { icon: Users, value: "20000+", label: "Active Members" },
       { icon: Award, value: "20+", label: "Events Hosted" },
-      { icon: Target, value: "10+", label: "Tech Discussions" }
+      { icon: Target, value: "10+", label: "Tech Discussions" },
+      { icon: Calendar, value: "50+", label: "Workshops Conducted" }
     ];
 
   const socialLinks = [

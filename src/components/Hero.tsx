@@ -23,59 +23,60 @@ const Hero = () => {
       
       {/* Content */}
       <div className="hero-content min-h-screen flex items-center justify-center">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto space-y-12">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
+          <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
             {/* Main Heading */}
-            <div className="space-y-6">
-              <div className="text-sm font-medium text-white uppercase tracking-wider opacity-90">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="text-xs sm:text-sm font-medium text-white uppercase tracking-wider opacity-90">
                 Technical Community of Hyderabad
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight no-select" tabIndex={-1}>
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight no-select" tabIndex={-1}>
                 Building the
                 <br />
                 <span className="text-primary">Tech Community</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-white opacity-90 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white opacity-90 max-w-2xl mx-auto px-4">
                 e-DAM connects students and professionals through technology, entrepreneurship, and innovation
               </p>
             </div>
 
             {/* Three Pillars */}
-            <div className="flex justify-center gap-8 md:gap-12">
-              <a href="#technologies" className="flex flex-col items-center space-y-2 text-white opacity-90 hover:opacity-100 transition-opacity cursor-pointer">
-                <BookOpen className="h-8 w-8" />
-                <span className="font-semibold">Learn</span>
+            <div className="flex justify-center gap-6 sm:gap-8 md:gap-12">
+              <a href="#technologies" className="flex flex-col items-center space-y-1 sm:space-y-2 text-white opacity-90 hover:opacity-100 transition-opacity cursor-pointer">
+                <BookOpen className="h-6 w-6 sm:h-8 sm:w-8" />
+                <span className="font-semibold text-sm sm:text-base">Learn</span>
               </a>
-              <div className="flex flex-col items-center space-y-2 text-white opacity-90">
-                <Users className="h-8 w-8" />
-                <span className="font-semibold">Network</span>
+              <div className="flex flex-col items-center space-y-1 sm:space-y-2 text-white opacity-90">
+                <Users className="h-6 w-6 sm:h-8 sm:w-8" />
+                <span className="font-semibold text-sm sm:text-base">Network</span>
               </div>
-              <div className="flex flex-col items-center space-y-2 text-white opacity-90">
-                <TrendingUp className="h-8 w-8" />
-                <span className="font-semibold">Grow</span>
+              <div className="flex flex-col items-center space-y-1 sm:space-y-2 text-white opacity-90">
+                <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8" />
+                <span className="font-semibold text-sm sm:text-base">Grow</span>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
               <a 
                 href="https://forms.gle/njRM2k72CepuzZtC8" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                className="w-full sm:w-auto"
               >
                 <Button 
                   variant="hero" 
                   size="lg" 
-                  className="group"
+                  className="group w-full sm:w-auto text-sm sm:text-base"
                 >
                   Join Our Community
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <Link to="/technologies">
-                <Button variant="tech" size="lg">
+              <Link to="/technologies" className="w-full sm:w-auto">
+                <Button variant="tech" size="lg" className="w-full sm:w-auto text-sm sm:text-base">
                   Explore Technologies
                 </Button>
               </Link>
