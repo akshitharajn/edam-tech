@@ -11,6 +11,7 @@ import Suggest from "./pages/Suggest";
 import HundredDays from "./pages/HundredDays";
 import OurTeam from "./pages/OurTeam";
 import Spotlights from "./pages/Spotlights";
+import EDAMChapters from "./pages/EDAMChapters";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/hundred-days" element={<HundredDays />} />
           <Route path="/our-team" element={<OurTeam />} />
           <Route path="/spotlights" element={<Spotlights />} />
+          <Route path="/e-dam-chapters" element={<EDAMChapters />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

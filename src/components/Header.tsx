@@ -12,6 +12,7 @@ const Header = () => {
     { name: "Technologies", href: "#technologies", isExternal: false },
     { name: "Our Team", href: "/our-team", isExternal: true },
     { name: "e-DAM Spotlights", href: "/spotlights", isExternal: true },
+    { name: "e-DAM Chapters", href: "/e-dam-chapters", isExternal: true },
     { name: "Programs", href: "#programs", isExternal: false },
     { name: "Community", href: "#community", isExternal: false },
   ];
@@ -21,7 +22,12 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center space-x-2">
+            <img 
+              src="/favicon.ico" 
+              alt="e-DAM Logo" 
+              className="h-6 w-6 sm:h-8 sm:w-8"
+            />
             <h1 className="text-lg sm:text-xl font-bold text-primary drop-shadow-lg">
               e-DAM
             </h1>

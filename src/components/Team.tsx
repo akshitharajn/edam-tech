@@ -83,9 +83,9 @@ const Team = () => {
       },
       featured: true
     },
-    {
+    { 
       id: 3,
-      name: "Rohan Vemula",
+      name: "Vemula Rohan",
       role: "Community Lead",
       bio: "Education specialist designing impactful learning experiences for our community.",
       image: "/placeholder.svg",
