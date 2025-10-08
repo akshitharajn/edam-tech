@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import akshithaImage from "@/assets/akshitha-nagasani.jpg";
 import { 
   Linkedin, 
   Github, 
@@ -74,7 +75,7 @@ const OurTeam = () => {
       name: "Vivekananda Gavini",
       role: "C0-Founder",
       bio: "Full-stack developer and AI enthusiast leading our technical initiatives.",
-      image: "/placeholder.svg",
+      image: "/images/vivekananda-gavini.jpg",
       location: "Hyderabad, India",
       specialties: ["AI/ML", "Full-Stack Development", "DevOps"],
       social: {
@@ -88,7 +89,7 @@ const OurTeam = () => {
       id: 3,
       name: "Vemula Rohan",
       role: "Community Lead",
-      bio: "Education specialist designing impactful learning experiences for our community.",
+      bio: "High-level proficiency with community-specific software platforms and reporting dashboards.",
       image: "/placeholder.svg",
       location: "Hyderabad, India",
       specialties: ["Education Design", "Program Management", "Mentoring"],
@@ -99,23 +100,8 @@ const OurTeam = () => {
       },
       featured: true
     },
-    {
+       {
       id: 4,
-      name: "Akshitha Nagasani",
-      role: "Technical Lead",
-      bio: "Empowering developers and shaping technology strategies for scalable growth.",
-      image: "/placeholder.svg",
-      location: "Hyderabad, India",
-      specialties: ["Web Development", "UI/UX Design", "User Research"],
-      social: {
-        linkedin: "https://in.linkedin.com/company/edamcommunity",
-        github: "https://github.com/e-DAMCommunity",
-        email: "sneha@edam.tech"
-      },
-      featured: true
-    },
-    {
-      id: 5,
       name: "Yasavi Madapati",
       role: "Community Mentor and EX_Lead",
       bio: "Creative Community Mentor turning ideas into engaging digital stories.",
@@ -130,13 +116,28 @@ const OurTeam = () => {
       featured: true
     },
     {
+      id: 5,
+      name: "Akshitha Nagasani",
+      role: "Technical Lead",
+      bio: "Expert in programming languages and software architecture, with deep knowledge of system infrastructure and security protocols",
+      image: akshithaImage,
+      location: "Hyderabad, India",
+      specialties: ["Web Development", "UI/UX Design", "User Research"],
+      social: {
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        github: "https://github.com/e-DAMCommunity",
+        email: "sneha@edam.tech"
+      },
+      featured: true
+    },
+    {
       id: 6,
       name: "Snehitha Sunkam",
       role: "Design Lead",
       bio: "Focused on building design systems and leading teams to shape visually compelling products.",
       image: "/placeholder.svg",
       location: "Hyderabad, India",
-      specialties: ["Community Engagement", "Event Management", "Social Media"],
+      specialties: ["graphic design", "UI/UX design", "branding"],
       social: {
         linkedin: "https://in.linkedin.com/company/edamcommunity",
         instagram: "https://www.instagram.com/edam.community/",
@@ -146,12 +147,11 @@ const OurTeam = () => {
     },
     {
       id: 7,
-      name: "Nandana",
-      role: "Social Media Manager",
-      bio: "Creative Social Media Manager turning ideas into engaging digital stories.",
-      image: "/placeholder.svg",
+      name: "Pavan Satwik",
+      role: "PR Lead",
+      bio: "Pavan Satwik is the PR Lead for, where he builds strong relationships with media and influencers to craft engaging stories. .",
       location: "Hyderabad, India",
-      specialties: ["Data Science", "Analytics", "Machine Learning"],
+      specialties: ["social media", "public relations", "media outreach"],
       social: {
         linkedin: "https://in.linkedin.com/company/edamcommunity",
         github: "https://github.com/e-DAMCommunity",
@@ -161,12 +161,41 @@ const OurTeam = () => {
     },
     {
       id: 8,
+      name: "Siri Chaitra",
+      role: "Marketing Lead",
+      bio: "Creative Marketing Lead turning ideas into engaging digital stories.",
+      location: "Hyderabad, India",
+      specialties: ["Marketing", "Branding", "Content Strategy"],
+      social: {
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        github: "https://github.com/e-DAMCommunity",
+        email: "anita@edam.tech"
+      },
+      featured: true
+    },
+       {
+      id: 9,
+      name: "Srija Bonda",
+      role: "Content Creation Lead",
+      bio: "Creative Content Creation Lead turning ideas into engaging digital stories.",
+      image: "/placeholder.svg",
+      location: "Hyderabad, India",
+      specialties: ["Content Creation", "Marketing", "SEO"],
+      social: {
+        linkedin: "https://in.linkedin.com/company/edamcommunity",
+        github: "https://github.com/e-DAMCommunity",
+        email: "anita@edam.tech"
+      },
+      featured: true
+    },
+    {
+      id: 10,
       name: "Ghousiya Begum",
       role: "Community Manager",
       bio: "Creative Community Manager turning ideas into engaging digital stories.",
       image: "/placeholder.svg",
       location: "Hyderabad, India",
-      specialties: ["Data Science", "Analytics", "Machine Learning"],
+      specialties: ["management", "community building", "event planning"],
       social: {
         linkedin: "https://in.linkedin.com/company/edamcommunity",
         github: "https://github.com/e-DAMCommunity",
