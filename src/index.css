@@ -188,8 +188,15 @@ All colors MUST be HSL.
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  /* Fallback background */
+  /* Theme-aware fallback background */
+}
+
+.dark .hero-video-container {
   background: linear-gradient(135deg, #000000 0%, #1a0033 50%, #000000 100%);
+}
+
+.light .hero-video-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8e4f3 50%, #f8f9fa 100%);
 }
 
 .hero-video {
@@ -218,21 +225,41 @@ All colors MUST be HSL.
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
+}
+
+.dark .hero-overlay {
   background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 0.8) 0%,
     rgba(40, 0, 80, 0.6) 50%,
     rgba(0, 0, 0, 0.8) 100%
   );
-  z-index: -1;
+}
+
+.light .hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(232, 228, 243, 0.5) 50%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
+  animation: fadeInZoom 1.5s ease-out;
+}
+
+.dark .hero-content {
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  animation: fadeInZoom 1.5s ease-out;
+}
+
+.light .hero-content {
+  color: hsl(222.2, 84%, 4.9%);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 /* Custom utility classes for purple theme */

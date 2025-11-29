@@ -236,7 +236,7 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="py-20 bg-gradient-to-b from-black via-purple-950/10 to-black">
+    <section id="team" className="py-20 bg-secondary/50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-16">
@@ -254,7 +254,7 @@ const Team = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg shadow-primary/25">
-                  <stat.icon className="h-8 w-8 text-black" />
+                  <stat.icon className="h-8 w-8 dark:text-black text-white" />
                 </div>
                 <div className="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.value}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -273,7 +273,7 @@ const Team = () => {
             {teamMembers.filter(member => member.featured).map((member) => (
               <Card 
                 key={member.id}
-                className="p-8 bg-black/60 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group backdrop-blur-sm"
+                className="p-8 bg-card/60 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group backdrop-blur-sm"
               >
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                   <div className="relative">
@@ -283,7 +283,7 @@ const Team = () => {
                       className="w-24 h-24 rounded-full object-cover border-2 border-primary/30 group-hover:border-primary transition-colors duration-300"
                     />
                     <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center">
-                      <Award className="h-4 w-4 text-black" />
+                      <Award className="h-4 w-4 dark:text-black text-white" />
                     </div>
                   </div>
                   
@@ -353,7 +353,7 @@ const Team = () => {
 
         {/* Join Team CTA */}
         <div className="text-center mt-16">
-          <Card className="max-w-2xl mx-auto p-8 bg-gradient-to-r from-black via-purple-950/30 to-black border-primary/30 backdrop-blur-sm">
+          <Card className="max-w-2xl mx-auto p-8 bg-card border-primary/30 backdrop-blur-sm">
             <h3 className="text-2xl font-bold text-foreground mb-4">
               Want to Join Our Team?
             </h3>
@@ -386,14 +386,14 @@ const Team = () => {
       {/* Job Positions Modal/Section */}
       {showJobs && (
         <div 
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 job-modal-overlay"
+          className="fixed inset-0 bg-background/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 job-modal-overlay"
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               setShowJobs(false);
             }
           }}
         >
-          <div className="bg-black/95 border border-primary/30 rounded-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden job-modal-content">
+          <div className="bg-card border border-primary/30 rounded-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden job-modal-content">
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-primary/20">
               <div>
@@ -427,12 +427,12 @@ const Team = () => {
                   {openPositions.filter(job => job.featured).map((job) => (
                     <Card 
                       key={job.id}
-                      className="p-6 bg-gradient-to-br from-purple-950/20 to-black border-primary/30 hover:border-primary/60 transition-all duration-300 group"
+                      className="p-6 bg-card border-primary/30 hover:border-primary/60 transition-all duration-300 group"
                     >
                       <div className="flex items-start justify-between mb-4">
                         <div>
                           <div className="flex items-center gap-2 mb-1">
-                            <span className="bg-primary text-black text-xs px-2 py-1 rounded-full font-semibold">
+                            <span className="bg-primary dark:text-black text-white text-xs px-2 py-1 rounded-full font-semibold">
                               Featured
                             </span>
                             <span className="text-xs text-muted-foreground">{job.department}</span>
@@ -505,7 +505,7 @@ const Team = () => {
                   {openPositions.filter(job => !job.featured).map((job) => (
                     <Card 
                       key={job.id}
-                      className="p-4 bg-black/40 border-primary/20 hover:border-primary/60 hover:bg-black/60 transition-all duration-300 group"
+                      className="p-4 bg-card/60 border-primary/20 hover:border-primary/60 hover:bg-card transition-all duration-300 group"
                     >
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex-1">

@@ -36,14 +36,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black border-t border-primary/20">
+    <footer className="bg-secondary border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Brand Section */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center shadow-lg shadow-primary/25">
-                <span className="text-black font-bold text-lg">e</span>
+                <span className="dark:text-black text-white font-bold text-lg">e</span>
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-foreground">e-DAM</span>
@@ -163,7 +163,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-primary/20 mt-12 pt-8">
+        <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground">
               © {currentYear} e-DAM Community. All rights reserved.

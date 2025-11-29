@@ -27,32 +27,32 @@ const Hero = () => {
           <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
             {/* Main Heading */}
             <div className="space-y-4 sm:space-y-6">
-              <div className="text-xs sm:text-sm font-medium text-white uppercase tracking-wider opacity-90">
+              <div className="text-xs sm:text-sm font-medium dark:text-white text-foreground uppercase tracking-wider opacity-90">
                 Technical Community of Hyderabad
               </div>
               
-              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight no-select" tabIndex={-1}>
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold dark:text-white text-foreground leading-tight no-select" tabIndex={-1}>
                 Building the
                 <br />
                 <span className="text-primary">Tech Community</span>
               </h1>
               
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white opacity-90 max-w-2xl mx-auto px-4">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl dark:text-white text-foreground opacity-90 max-w-2xl mx-auto px-4">
                 e-DAM connects students and professionals through technology, entrepreneurship, and innovation
               </p>
             </div>
 
             {/* Three Pillars */}
             <div className="flex justify-center gap-6 sm:gap-8 md:gap-12">
-              <a href="#technologies" className="flex flex-col items-center space-y-1 sm:space-y-2 text-white opacity-90 hover:opacity-100 transition-opacity cursor-pointer">
+              <a href="#technologies" className="flex flex-col items-center space-y-1 sm:space-y-2 dark:text-white text-foreground opacity-90 hover:opacity-100 transition-opacity cursor-pointer">
                 <BookOpen className="h-6 w-6 sm:h-8 sm:w-8" />
                 <span className="font-semibold text-sm sm:text-base">Learn</span>
               </a>
-              <div className="flex flex-col items-center space-y-1 sm:space-y-2 text-white opacity-90">
+              <div className="flex flex-col items-center space-y-1 sm:space-y-2 dark:text-white text-foreground opacity-90">
                 <Users className="h-6 w-6 sm:h-8 sm:w-8" />
                 <span className="font-semibold text-sm sm:text-base">Network</span>
               </div>
-              <div className="flex flex-col items-center space-y-1 sm:space-y-2 text-white opacity-90">
+              <div className="flex flex-col items-center space-y-1 sm:space-y-2 dark:text-white text-foreground opacity-90">
                 <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8" />
                 <span className="font-semibold text-sm sm:text-base">Grow</span>
               </div>
@@ -91,15 +91,15 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-8 max-w-md mx-auto pt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">20000+</div>
-                <div className="text-sm text-white opacity-75">Members</div>
+                <div className="text-sm dark:text-white text-foreground opacity-75">Members</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">5+</div>
-                <div className="text-sm text-white opacity-75">Technologies</div>
+                <div className="text-sm dark:text-white text-foreground opacity-75">Technologies</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">10+</div>
-                <div className="text-sm text-white opacity-75">Events</div>
+                <div className="text-sm dark:text-white text-foreground opacity-75">Events</div>
               </div>
             </div>
           </div>
