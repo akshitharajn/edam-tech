@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
 import Technologies from "./pages/Technologies";
 import Volunteer from "./pages/Volunteer";
@@ -18,25 +19,27 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/technologies" element={<Technologies />} />
-          <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="/join" element={<Join />} />
-          <Route path="/suggest" element={<Suggest />} />
-          <Route path="/hundred-days" element={<HundredDays />} />
-          <Route path="/our-team" element={<OurTeam />} />
-          <Route path="/spotlights" element={<Spotlights />} />
-          <Route path="/e-dam-chapters" element={<EDAMChapters />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <ThemeProvider defaultTheme="dark">
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/technologies" element={<Technologies />} />
+            <Route path="/volunteer" element={<Volunteer />} />
+            <Route path="/join" element={<Join />} />
+            <Route path="/suggest" element={<Suggest />} />
+            <Route path="/hundred-days" element={<HundredDays />} />
+            <Route path="/our-team" element={<OurTeam />} />
+            <Route path="/spotlights" element={<Spotlights />} />
+            <Route path="/e-dam-chapters" element={<EDAMChapters />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

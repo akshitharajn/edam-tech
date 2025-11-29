@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -81,6 +82,7 @@ const Header = () => {
 
           {/* Desktop CTA - Hidden on mobile/tablet, shown on desktop */}
           <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
+            <ThemeToggle />
             <a 
               href="https://forms.gle/njRM2k72CepuzZtC8" 
               target="_blank" 
@@ -92,19 +94,22 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Mobile menu button - Hidden on desktop, shown on mobile/tablet */}
-          <button
-            className="lg:hidden p-1.5 sm:p-2 rounded-md hover:bg-primary/10 transition-colors touch-manipulation"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={isMenuOpen}
-          >
-            {isMenuOpen ? (
-              <X className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
-            ) : (
-              <Menu className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
-            )}
-          </button>
+          {/* Mobile/Tablet - Theme Toggle and Menu Button */}
+          <div className="lg:hidden flex items-center space-x-2">
+            <ThemeToggle size="sm" />
+            <button
+              className="p-1.5 sm:p-2 rounded-md hover:bg-primary/10 transition-colors touch-manipulation"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? (
+                <X className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
+              ) : (
+                <Menu className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation - Only shown when menu is open on mobile/tablet */}
