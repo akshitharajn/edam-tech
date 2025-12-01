@@ -23,17 +23,17 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-background/90 backdrop-blur-md border-b border-border z-50">
+    <header className="fixed top-0 w-full bg-background/90 backdrop-blur-md border-b border-border z-50 touch-manipulation">
       <div className="container mx-auto px-3 sm:px-4 lg:px-6">
-        <div className="flex items-center justify-between h-12 sm:h-14 lg:h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-18">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-1.5 sm:space-x-2">
             <img 
               src="/favicon.ico" 
               alt="e-DAM Logo" 
-              className="h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8"
+              className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8"
             />
-            <h1 className="text-base sm:text-lg lg:text-xl font-bold text-primary drop-shadow-lg">
+            <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-primary drop-shadow-lg">
               e-DAM
             </h1>
           </div>
@@ -180,15 +180,15 @@ const Header = () => {
           <div className="lg:hidden flex items-center space-x-2">
             <ThemeToggle size="sm" />
             <button
-              className="p-1.5 sm:p-2 rounded-md hover:bg-primary/10 transition-colors touch-manipulation"
+              className="p-2 sm:p-2.5 rounded-md hover:bg-primary/10 transition-colors touch-manipulation min-h-[44px] min-w-[44px] flex items-center justify-center"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <X className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
+                <X className="h-5 w-5 sm:h-6 sm:w-6 text-foreground" />
               ) : (
-                <Menu className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
+                <Menu className="h-5 w-5 sm:h-6 sm:w-6 text-foreground" />
               )}
             </button>
           </div>
@@ -204,7 +204,7 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="block px-3 py-2.5 text-sm sm:text-base text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-200 rounded-md touch-manipulation"
+                    className="block px-4 py-3 text-base text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-200 rounded-md touch-manipulation min-h-[44px] flex items-center"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -213,7 +213,7 @@ const Header = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2.5 text-sm sm:text-base text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-200 rounded-md touch-manipulation"
+                    className="block px-4 py-3 text-base text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-200 rounded-md touch-manipulation min-h-[44px] flex items-center"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}

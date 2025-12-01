@@ -72,32 +72,32 @@ const Technologies = () => {
   ];
 
   return (
-    <section id="technologies" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="technologies" className="py-12 sm:py-16 md:py-20">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 no-select" tabIndex={-1}>
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 no-select px-2" tabIndex={-1}>
             <span className="text-primary">Technologies</span> We Focus On
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground px-4">
             These are the business-required technologies we specialize in. 
             Learn from industry experts and build real-world projects.
           </p>
         </div>
 
         {/* Technologies Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {technologies.map((tech, index) => (
             <Card 
               key={index} 
-              className="p-6 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg group cursor-pointer"
+              className="p-4 sm:p-5 md:p-6 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg group cursor-pointer touch-manipulation"
             >
               <div className="text-center">
-                <div className={`w-16 h-16 bg-gradient-to-r ${tech.color} rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <tech.icon className="h-8 w-8 text-white" />
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r ${tech.color} rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <tech.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-3">{tech.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">{tech.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{tech.description}</p>
                 
                 <div className="flex flex-wrap gap-1 justify-center mb-4">

@@ -185,12 +185,18 @@ const Community = () => {
               .testimonial-track:hover {
                 animation-play-state: paused;
               }
+
+              @media (max-width: 640px) {
+                .testimonial-track {
+                  animation-duration: 30s;
+                }
+              }
             `}} />
 
             <div className="flex testimonial-track">
               {/* First set of testimonials */}
               {testimonials.map((testimonial, index) => (
-                <div key={`original-${index}`} className="flex-shrink-0 w-[350px] mx-4">
+                <div key={`original-${index}`} className="flex-shrink-0 w-[280px] sm:w-[350px] mx-3 sm:mx-4">
                   <Card className="p-6 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg h-full">
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">

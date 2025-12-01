@@ -6,10 +6,31 @@
 html, body {
   overflow-x: hidden;
   width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Improved touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Faster animations on touch devices */
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  /* Prevent double-tap zoom */
+  touch-action: manipulation;
 }
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
@@ -350,6 +371,32 @@ All colors MUST be HSL.
 
   .job-modal-content {
     animation: slideInUp 0.3s ease-out;
+  }
+
+  /* Mobile-specific utilities */
+  @media (max-width: 640px) {
+    /* Reduce motion on mobile for better performance */
+    @media (prefers-reduced-motion: no-preference) {
+      * {
+        animation-duration: 0.2s !important;
+        transition-duration: 0.2s !important;
+      }
+    }
+    
+    /* Better spacing for mobile */
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    /* Prevent zoom on form inputs */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+      font-size: 16px;
+    }
   }
 
   @keyframes fadeIn {

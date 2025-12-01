@@ -307,7 +307,7 @@ const Team = () => {
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/10 to-black">
       {/* Header */}
       <div className="bg-black/60 backdrop-blur-md border-b border-primary/20 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold text-primary">e-DAM</h1>
             <Link 
@@ -321,11 +321,11 @@ const Team = () => {
         </div>
       </div>
 
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6">
           {/* Section Header */}
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">
               Meet Our <span className="text-primary text-glow">Team</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
@@ -373,9 +373,9 @@ const Team = () => {
                     </div>
                     
                     <div className="w-full">
-                      <h4 className="text-xl font-bold text-foreground mb-1">{member.name}</h4>
-                      <p className="text-primary font-semibold mb-2">{member.role}</p>
-                      <p className="text-muted-foreground text-sm mb-4">{member.bio}</p>
+                      <h4 className="text-lg sm:text-xl font-bold text-foreground mb-1">{member.name}</h4>
+                      <p className="text-sm sm:text-base text-primary font-semibold mb-2">{member.role}</p>
+                      <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">{member.bio}</p>
                       
                       <div className="flex items-center justify-center gap-1 mb-4">
                         <MapPin className="h-4 w-4 text-primary" />
@@ -441,12 +441,12 @@ const Team = () => {
           </div>
 
           {/* Join Team CTA */}
-          <div className="text-center mt-16">
-            <Card className="max-w-2xl mx-auto p-8 bg-gradient-to-r from-black via-purple-950/30 to-black border-primary/30 backdrop-blur-sm">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+          <div className="text-center mt-12 sm:mt-16">
+            <Card className="max-w-2xl mx-auto p-6 sm:p-8 bg-gradient-to-r from-black via-purple-950/30 to-black border-primary/30 backdrop-blur-sm">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">
                 Want to Join Our Team?
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
                 We're always looking for passionate individuals who share our vision 
                 of building an inclusive and innovative tech community.
               </p>

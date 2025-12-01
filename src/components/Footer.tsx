@@ -37,8 +37,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-secondary border-t border-border">
-      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8">
           {/* Brand Section */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
@@ -112,13 +112,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-6">Quick Links</h3>
-            <ul className="space-y-3">
+            <h3 className="text-base sm:text-lg font-semibold text-foreground mb-4 sm:mb-6">Quick Links</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a 
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm touch-manipulation inline-block py-1"
                   >
                     {link.name}
                   </a>

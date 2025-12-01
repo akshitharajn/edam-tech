@@ -170,6 +170,12 @@ const Programs = () => {
               .programs-scroll-track:hover {
                 animation-play-state: paused;
               }
+
+              @media (max-width: 640px) {
+                .programs-scroll-track {
+                  animation-duration: 45s;
+                }
+              }
             `}} />
 
             <div className="flex programs-scroll-track">
@@ -178,7 +184,7 @@ const Programs = () => {
                 const IconComponent = getTypeIcon(program.type);
                 
                 return (
-                  <div key={`original-${index}`} className="flex-shrink-0 w-[400px] mx-4">
+                  <div key={`original-${index}`} className="flex-shrink-0 w-[280px] sm:w-[340px] md:w-[400px] mx-3 sm:mx-4">
                     <Card className="p-6 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg group h-full">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center space-x-3">
