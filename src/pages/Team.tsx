@@ -16,11 +16,49 @@ import {
   Clock,
   DollarSign,
   Briefcase,
-  ArrowLeft
+  ArrowLeft,
+  LucideIcon
 } from "lucide-react";
 
-const OurTeam = () => {
-  const [showJobs, setShowJobs] = useState(false);
+interface SocialLinks {
+  linkedin?: string;
+  github?: string;
+  instagram?: string;
+  email?: string;
+}
+
+interface TeamMember {
+  id: number;
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+  location: string;
+  specialties: string[];
+  social: SocialLinks;
+  featured: boolean;
+}
+
+interface Stat {
+  icon: LucideIcon;
+  value: string;
+  label: string;
+}
+
+interface JobPosition {
+  id: number;
+  title: string;
+  department?: string;
+  type: string;
+  location: string;
+  salary?: string;
+  description: string;
+  requirements: string[];
+  featured: boolean;
+}
+
+const Team = () => {
+  const [showJobs, setShowJobs] = useState<boolean>(false);
 
   // Manage body scroll when modal is open
   useEffect(() => {
@@ -30,7 +68,6 @@ const OurTeam = () => {
       document.body.classList.remove('modal-open');
     }
 
-    // Cleanup on component unmount
     return () => {
       document.body.classList.remove('modal-open');
     };
@@ -53,7 +90,7 @@ const OurTeam = () => {
     };
   }, [showJobs]);
 
-  const teamMembers = [
+  const teamMembers: TeamMember[] = [
     {
       id: 1,
       name: "Abhishek Nagaraja",
@@ -73,7 +110,7 @@ const OurTeam = () => {
     {
       id: 2,
       name: "Vivekananda Gavini",
-      role: "C0-Founder",
+      role: "Co-Founder",
       bio: "Full-stack developer and AI enthusiast leading our technical initiatives.",
       image: "/images/vivekananda-gavini.jpg",
       location: "Hyderabad, India",
@@ -100,7 +137,7 @@ const OurTeam = () => {
       },
       featured: true
     },
-       {
+    {
       id: 4,
       name: "Yasavi Madapati",
       role: "Community Mentor and EX_Lead",
@@ -149,7 +186,8 @@ const OurTeam = () => {
       id: 7,
       name: "Pavan Satwik",
       role: "PR Lead",
-      bio: "Pavan Satwik is the PR Lead for, where he builds strong relationships with media and influencers to craft engaging stories. .",
+      bio: "Pavan Satwik is the PR Lead for, where he builds strong relationships with media and influencers to craft engaging stories.",
+      image: "/placeholder.svg",
       location: "Hyderabad, India",
       specialties: ["social media", "public relations", "media outreach"],
       social: {
@@ -164,6 +202,7 @@ const OurTeam = () => {
       name: "Siri Chaitra",
       role: "Marketing Lead",
       bio: "Creative Marketing Lead turning ideas into engaging digital stories.",
+      image: "/placeholder.svg",
       location: "Hyderabad, India",
       specialties: ["Marketing", "Branding", "Content Strategy"],
       social: {
@@ -173,7 +212,7 @@ const OurTeam = () => {
       },
       featured: true
     },
-       {
+    {
       id: 9,
       name: "Srija Bonda",
       role: "Content Creation Lead",
@@ -205,13 +244,13 @@ const OurTeam = () => {
     }
   ];
 
-  const stats = [
+  const stats: Stat[] = [
     { icon: Users, value: "20000+", label: "Active Members" },
     { icon: Award, value: "20+", label: "Events Hosted" },
     { icon: Target, value: "10+", label: "Tech Discussions" }
   ];
 
-  const openPositions = [
+  const openPositions: JobPosition[] = [
     {
       id: 1,
       title: "Content Creator (Part-time)",
@@ -286,7 +325,7 @@ const OurTeam = () => {
         <div className="container mx-auto px-4">
           {/* Section Header */}
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 no-select" tabIndex={-1}>
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               Meet Our <span className="text-primary text-glow">Team</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
@@ -315,14 +354,14 @@ const OurTeam = () => {
               Core Leadership
             </h3>
             
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
               {teamMembers.filter(member => member.featured).map((member) => (
                 <Card 
                   key={member.id}
-                  className="p-8 bg-black/60 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group backdrop-blur-sm"
+                  className="p-6 bg-black/60 border-primary/30 hover:border-primary hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 group backdrop-blur-sm"
                 >
-                  <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                    <div className="relative">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative mb-4">
                       <img 
                         src={member.image} 
                         alt={member.name}
@@ -333,17 +372,17 @@ const OurTeam = () => {
                       </div>
                     </div>
                     
-                    <div className="flex-1 text-center md:text-left">
+                    <div className="w-full">
                       <h4 className="text-xl font-bold text-foreground mb-1">{member.name}</h4>
                       <p className="text-primary font-semibold mb-2">{member.role}</p>
                       <p className="text-muted-foreground text-sm mb-4">{member.bio}</p>
                       
-                      <div className="flex items-center justify-center md:justify-start gap-1 mb-4">
+                      <div className="flex items-center justify-center gap-1 mb-4">
                         <MapPin className="h-4 w-4 text-primary" />
                         <span className="text-sm text-muted-foreground">{member.location}</span>
                       </div>
                       
-                      <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-4">
+                      <div className="flex flex-wrap gap-2 justify-center mb-4">
                         {member.specialties.map((specialty, index) => (
                           <span 
                             key={index}
@@ -354,10 +393,12 @@ const OurTeam = () => {
                         ))}
                       </div>
                       
-                      <div className="flex gap-3 justify-center md:justify-start">
+                      <div className="flex gap-3 justify-center">
                         {member.social.linkedin && (
                           <a 
                             href={member.social.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors"
                           >
                             <Linkedin className="h-4 w-4 text-primary" />
@@ -366,6 +407,8 @@ const OurTeam = () => {
                         {member.social.github && (
                           <a 
                             href={member.social.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors"
                           >
                             <Github className="h-4 w-4 text-primary" />
@@ -432,18 +475,18 @@ const OurTeam = () => {
         {/* Job Positions Modal */}
         {showJobs && (
           <div 
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 job-modal-overlay"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={(e) => {
               if (e.target === e.currentTarget) {
                 setShowJobs(false);
               }
             }}
           >
-            <div className="bg-black/95 border border-primary/30 rounded-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden job-modal-content">
+            <div className="bg-black/95 border border-primary/30 rounded-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden">
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-primary/20">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground no-select" tabIndex={-1}>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">
                     Open Positions at <span className="text-primary">e-DAM</span>
                   </h2>
                   <p className="text-muted-foreground mt-1">
@@ -490,7 +533,7 @@ const OurTeam = () => {
                           <Briefcase className="h-5 w-5 text-primary" />
                         </div>
                         
-                        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                        <p className="text-sm text-muted-foreground mb-4">
                           {job.description}
                         </p>
                         
@@ -512,7 +555,7 @@ const OurTeam = () => {
                         </div>
                         
                         <div className="flex flex-wrap gap-1 mb-4">
-                          {job.requirements.slice(0, 2).map((req, index) => (
+                          {job.requirements.map((req, index) => (
                             <span 
                               key={index}
                               className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
@@ -520,11 +563,6 @@ const OurTeam = () => {
                               {req}
                             </span>
                           ))}
-                          {job.requirements.length > 2 && (
-                            <span className="text-xs bg-muted/20 text-muted-foreground px-2 py-1 rounded-full">
-                              +{job.requirements.length - 2} more
-                            </span>
-                          )}
                         </div>
                         
                         <a 
@@ -575,7 +613,7 @@ const OurTeam = () => {
                           </div>
                         </div>
                         
-                        <p className="text-xs text-muted-foreground mb-3 line-clamp-2">
+                        <p className="text-xs text-muted-foreground mb-3">
                           {job.description}
                         </p>
                         
@@ -593,7 +631,7 @@ const OurTeam = () => {
                         </div>
                         
                         <div className="flex flex-wrap gap-1 mb-3">
-                          {job.requirements.slice(0, 1).map((req, index) => (
+                          {job.requirements.slice(0, 2).map((req, index) => (
                             <span 
                               key={index}
                               className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
@@ -601,11 +639,6 @@ const OurTeam = () => {
                               {req}
                             </span>
                           ))}
-                          {job.requirements.length > 1 && (
-                            <span className="text-xs bg-muted/20 text-muted-foreground px-2 py-1 rounded-full">
-                              +{job.requirements.length - 1} more
-                            </span>
-                          )}
                         </div>
                         
                         <a 
@@ -622,26 +655,6 @@ const OurTeam = () => {
                     ))}
                   </div>
                 </div>
-                
-                {/* Bottom CTA */}
-                <div className="mt-8 text-center">
-                  <Card className="p-6 bg-gradient-to-r from-black via-purple-950/30 to-black border-primary/30">
-                    <h4 className="text-lg font-bold text-foreground mb-2">
-                      Don't see the right position?
-                    </h4>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      We're always open to talented individuals who are passionate about technology and education.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                      <Button variant="hero" size="sm">
-                        Send Us Your Resume
-                      </Button>
-                      <Button variant="tech" size="sm">
-                        Join Our Talent Pool
-                      </Button>
-                    </div>
-                  </Card>
-                </div>
               </div>
             </div>
           </div>
@@ -651,4 +664,4 @@ const OurTeam = () => {
   );
 };
 
-export default OurTeam;
+export default Team;

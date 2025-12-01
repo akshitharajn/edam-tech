@@ -146,84 +146,170 @@ const Programs = () => {
           </p>
         </div>
 
-        {/* Programs Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {programs.map((program, index) => {
-            const IconComponent = getTypeIcon(program.type);
+        {/* Horizontal Auto-Scrolling Programs */}
+        <div className="mb-16">
+          <div className="relative overflow-hidden">
+            {/* Gradient Overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-secondary/20 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-secondary/20 to-transparent z-10 pointer-events-none" />
             
-            return (
-              <Card 
-                key={index} 
-                className="p-8 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg group"
-              >
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="h-6 w-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground">{program.title}</h3>
-                      <p className="text-sm text-primary">{program.subtitle}</p>
-                    </div>
-                  </div>
-                  <Badge className={`${getStatusColor(program.status)} border-0`}>
-                    {program.status}
-                  </Badge>
-                </div>
+            <style dangerouslySetInnerHTML={{__html: `
+              @keyframes scroll-programs {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+              }
+              
+              .programs-scroll-track {
+                animation: scroll-programs 60s linear infinite;
+              }
+              
+              .programs-scroll-track:hover {
+                animation-play-state: paused;
+              }
+            `}} />
 
-                <p className="text-muted-foreground mb-6">{program.description}</p>
+            <div className="flex programs-scroll-track">
+              {/* First set of programs */}
+              {programs.map((program, index) => {
+                const IconComponent = getTypeIcon(program.type);
+                
+                return (
+                  <div key={`original-${index}`} className="flex-shrink-0 w-[400px] mx-4">
+                    <Card className="p-6 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg group h-full">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                            <IconComponent className="h-5 w-5 text-primary-foreground" />
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="text-lg font-bold text-foreground truncate">{program.title}</h3>
+                            <p className="text-xs text-primary truncate">{program.subtitle}</p>
+                          </div>
+                        </div>
+                        <Badge className={`${getStatusColor(program.status)} border-0 text-xs flex-shrink-0`}>
+                          {program.status}
+                        </Badge>
+                      </div>
 
-                {/* Program Stats */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="text-center">
-                    <Clock className="h-5 w-5 text-primary mx-auto mb-1" />
-                    <div className="text-sm font-medium text-foreground">{program.duration}</div>
-                    <div className="text-xs text-muted-foreground">Duration</div>
-                  </div>
-                  <div className="text-center">
-                    <Users className="h-5 w-5 text-primary mx-auto mb-1" />
-                    <div className="text-sm font-medium text-foreground">{program.participants}</div>
-                    <div className="text-xs text-muted-foreground">Participants</div>
-                  </div>
-                  <div className="text-center">
-                    <Award className="h-5 w-5 text-primary mx-auto mb-1" />
-                    <div className="text-sm font-medium text-foreground">{program.difficulty}</div>
-                    <div className="text-xs text-muted-foreground">Level</div>
-                  </div>
-                </div>
+                      <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{program.description}</p>
 
-                {/* Features */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-foreground mb-3">What's Included:</h4>
-                  <ul className="space-y-2">
-                    {program.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                      {/* Program Stats */}
+                      <div className="grid grid-cols-3 gap-2 mb-4">
+                        <div className="text-center">
+                          <Clock className="h-4 w-4 text-primary mx-auto mb-1" />
+                          <div className="text-xs font-medium text-foreground">{program.duration}</div>
+                        </div>
+                        <div className="text-center">
+                          <Users className="h-4 w-4 text-primary mx-auto mb-1" />
+                          <div className="text-xs font-medium text-foreground">{program.participants}</div>
+                        </div>
+                        <div className="text-center">
+                          <Award className="h-4 w-4 text-primary mx-auto mb-1" />
+                          <div className="text-xs font-medium text-foreground truncate">{program.difficulty}</div>
+                        </div>
+                      </div>
 
-                {/* CTA */}
-                <div className="flex gap-3">
-                  <a 
-                    href="https://forms.gle/Chzxqx968etWogXx6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1"
-                  >
-                    <Button variant="hero" size="sm" className="flex-1 w-full">
-                      Join Program
-                    </Button>
-                  </a>
-                  <Button variant="tech" size="sm">
-                    Learn More
-                  </Button>
-                </div>
-              </Card>
-            );
-          })}
+                      {/* Features */}
+                      <div className="mb-4">
+                        <ul className="space-y-1">
+                          {program.features.slice(0, 3).map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center text-xs text-muted-foreground">
+                              <div className="w-1 h-1 bg-primary rounded-full mr-2 flex-shrink-0" />
+                              <span className="truncate">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* CTA */}
+                      <a 
+                        href="https://forms.gle/Chzxqx968etWogXx6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Button variant="hero" size="sm" className="w-full">
+                          Join Program
+                        </Button>
+                      </a>
+                    </Card>
+                  </div>
+                );
+              })}
+              
+              {/* Duplicate set for seamless loop */}
+              {programs.map((program, index) => {
+                const IconComponent = getTypeIcon(program.type);
+                
+                return (
+                  <div key={`duplicate-${index}`} className="flex-shrink-0 w-[400px] mx-4">
+                    <Card className="p-6 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg group h-full">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                            <IconComponent className="h-5 w-5 text-primary-foreground" />
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="text-lg font-bold text-foreground truncate">{program.title}</h3>
+                            <p className="text-xs text-primary truncate">{program.subtitle}</p>
+                          </div>
+                        </div>
+                        <Badge className={`${getStatusColor(program.status)} border-0 text-xs flex-shrink-0`}>
+                          {program.status}
+                        </Badge>
+                      </div>
+
+                      <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{program.description}</p>
+
+                      {/* Program Stats */}
+                      <div className="grid grid-cols-3 gap-2 mb-4">
+                        <div className="text-center">
+                          <Clock className="h-4 w-4 text-primary mx-auto mb-1" />
+                          <div className="text-xs font-medium text-foreground">{program.duration}</div>
+                        </div>
+                        <div className="text-center">
+                          <Users className="h-4 w-4 text-primary mx-auto mb-1" />
+                          <div className="text-xs font-medium text-foreground">{program.participants}</div>
+                        </div>
+                        <div className="text-center">
+                          <Award className="h-4 w-4 text-primary mx-auto mb-1" />
+                          <div className="text-xs font-medium text-foreground truncate">{program.difficulty}</div>
+                        </div>
+                      </div>
+
+                      {/* Features */}
+                      <div className="mb-4">
+                        <ul className="space-y-1">
+                          {program.features.slice(0, 3).map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-center text-xs text-muted-foreground">
+                              <div className="w-1 h-1 bg-primary rounded-full mr-2 flex-shrink-0" />
+                              <span className="truncate">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* CTA */}
+                      <a 
+                        href="https://forms.gle/Chzxqx968etWogXx6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Button variant="hero" size="sm" className="w-full">
+                          Join Program
+                        </Button>
+                      </a>
+                    </Card>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         {/* Call to Action */}

@@ -2,7 +2,6 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Target, Lightbulb, Rocket, Heart, Users, Calendar, Trophy, MessageCircle, ArrowRight, Award, BookOpen, Network, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
-import Team from "@/components/Team";
 
 const About = () => {
    const stats = [
@@ -138,11 +137,6 @@ const About = () => {
               </Link>
             </div>
           </div>
-        </div>
-
-        {/* Our Team Section */}
-        <div className="pt-12 sm:pt-16 lg:pt-20">
-          <Team />
         </div>
 
         {/* Join Our Community Section */}

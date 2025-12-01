@@ -10,8 +10,7 @@ import Volunteer from "./pages/Volunteer";
 import Join from "./pages/Join";
 import Suggest from "./pages/Suggest";
 import HundredDays from "./pages/HundredDays";
-import OurTeam from "./pages/OurTeam";
-import Team from "./pages/Team";
+import Team from "./pages/Team.tsx";
 import Spotlights from "./pages/Spotlights";
 import EDAMChapters from "./pages/EDAMChapters";
 import NotFound from "./pages/NotFound";
@@ -32,7 +31,6 @@ const App = () => (
             <Route path="/join" element={<Join />} />
             <Route path="/suggest" element={<Suggest />} />
             <Route path="/hundred-days" element={<HundredDays />} />
-            <Route path="/our-team" element={<OurTeam />} />
             <Route path="/team" element={<Team />} />
             <Route path="/spotlights" element={<Spotlights />} />
             <Route path="/e-dam-chapters" element={<EDAMChapters />} />
