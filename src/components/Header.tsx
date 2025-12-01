@@ -13,6 +13,7 @@ const Header = () => {
     { name: "About", href: "#about", isExternal: false },
     { name: "Technologies", href: "#technologies", isExternal: false },
     { name: "Programs", href: "#programs", isExternal: false },
+    { name: "Team", href: "/team", isExternal: true },
   ];
 
   const edamDropdownItems = [

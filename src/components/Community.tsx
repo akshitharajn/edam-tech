@@ -67,6 +67,34 @@ const Community = () => {
       company: "Design Studio",
       content: "Amazing community! The networking opportunities and workshops helped me transition from development to design.",
       avatar: "SP"
+    },
+    {
+      name: "Rahul Kumar",
+      role: "DevOps Engineer",
+      company: "CloudTech Solutions",
+      content: "The hands-on workshops and expert mentorship at e-DAM helped me master cloud technologies. Now I'm confidently managing enterprise-level deployments.",
+      avatar: "RK"
+    },
+    {
+      name: "Ananya Krishnan",
+      role: "Data Scientist",
+      company: "Analytics Pro",
+      content: "e-DAM's community is incredibly supportive. The peer learning sessions and collaborative projects accelerated my journey into data science significantly.",
+      avatar: "AK"
+    },
+    {
+      name: "Vikram Singh",
+      role: "Frontend Developer",
+      company: "WebCraft Studios",
+      content: "From attending my first workshop to becoming a mentor, e-DAM has been instrumental in my growth. The community here truly cares about your success.",
+      avatar: "VS"
+    },
+    {
+      name: "Meera Nair",
+      role: "Product Manager",
+      company: "InnovateTech",
+      content: "The diverse tech talks and networking events at e-DAM opened doors I never knew existed. It's more than a community—it's a launchpad for your career.",
+      avatar: "MN"
     }
   ];
 
@@ -128,29 +156,76 @@ const Community = () => {
           </div>
         </div>
 
-        {/* Testimonials */}
+        {/* Testimonials with Horizontal Scroll Animation */}
         <div className="mb-16">
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-foreground mb-4">What Our Members Say</h3>
             <p className="text-muted-foreground">Real stories from our community members</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-6 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg">
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
-                    <span className="text-primary-foreground font-bold">{testimonial.avatar}</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    <p className="text-xs text-primary">{testimonial.company}</p>
-                  </div>
+          <div className="relative overflow-hidden">
+            {/* Gradient Overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <style dangerouslySetInnerHTML={{__html: `
+              @keyframes scroll-left {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+              }
+              
+              .testimonial-track {
+                animation: scroll-left 40s linear infinite;
+              }
+              
+              .testimonial-track:hover {
+                animation-play-state: paused;
+              }
+            `}} />
+
+            <div className="flex testimonial-track">
+              {/* First set of testimonials */}
+              {testimonials.map((testimonial, index) => (
+                <div key={`original-${index}`} className="flex-shrink-0 w-[350px] mx-4">
+                  <Card className="p-6 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg h-full">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary-foreground font-bold">{testimonial.avatar}</span>
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="font-semibold text-foreground truncate">{testimonial.name}</h4>
+                        <p className="text-sm text-muted-foreground truncate">{testimonial.role}</p>
+                        <p className="text-xs text-primary truncate">{testimonial.company}</p>
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground italic text-sm leading-relaxed">"{testimonial.content}"</p>
+                  </Card>
                 </div>
-                <p className="text-muted-foreground italic">"{testimonial.content}"</p>
-              </Card>
-            ))}
+              ))}
+              
+              {/* Duplicate set for seamless loop */}
+              {testimonials.map((testimonial, index) => (
+                <div key={`duplicate-${index}`} className="flex-shrink-0 w-[350px] mx-4">
+                  <Card className="p-6 bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg h-full">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary-foreground font-bold">{testimonial.avatar}</span>
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="font-semibold text-foreground truncate">{testimonial.name}</h4>
+                        <p className="text-sm text-muted-foreground truncate">{testimonial.role}</p>
+                        <p className="text-xs text-primary truncate">{testimonial.company}</p>
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground italic text-sm leading-relaxed">"{testimonial.content}"</p>
+                  </Card>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
